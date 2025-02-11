@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: CBNITS
+  datasource:
+    url: jdbc:mysql://localhost:3306/CBNITS
+    username: root
+    password: ghosh
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+
