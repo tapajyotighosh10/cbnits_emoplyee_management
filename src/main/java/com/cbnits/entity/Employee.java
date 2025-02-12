@@ -22,13 +22,13 @@ public class Employee {
     private String role;
     private Date dateOfJoining;
     private Date dateOfEmployment;
+    private String street;
+    private String city;
+    private String state;
+    private String country;
+    private String zipCode;
 
-    @ManyToOne
-    @JoinColumn(name = "manager_id")
-    private Employee manager;
-
-    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Address address;
+    private String managerName;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ResourceAccess> resourceAccessList;
