@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -19,7 +21,7 @@ public class Education {
     private Long educationId;
     private String degree;
     private String institution;
-    private Date yearOfCompletion;
+    private LocalDate yearOfCompletion;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")

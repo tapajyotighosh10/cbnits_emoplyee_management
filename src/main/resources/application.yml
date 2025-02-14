@@ -14,4 +14,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 
-
+#  jackson:
+#    date-format: yyyy-MM-dd
+#    serialization:
+#      write-dates-as-timestamps: false

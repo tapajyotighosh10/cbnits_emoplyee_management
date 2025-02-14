@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +22,10 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long projectId;
     private String projectName;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<EmployeeProject> employeeProjects;
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 }

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -18,7 +20,7 @@ public class Achievement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long achievementId;
     private String achievementName;
-    private Date date;
+    private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
