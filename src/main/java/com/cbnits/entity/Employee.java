@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -20,13 +22,14 @@ public class Employee {
     private Long employeeId;
     private String name;
     private String role;
-    private Date dateOfJoining;
-    private Date dateOfEmployment;
+    private LocalDate dateOfJoining;
+    private LocalDate dateOfEmployment;
     private String street;
     private String city;
     private String state;
     private String country;
     private String zipCode;
+    private boolean employeeStatus;
 
     private String managerName;
 
@@ -34,10 +37,13 @@ public class Employee {
     private List<ResourceAccess> resourceAccessList;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<EmployeeProject> employeeProjects;
+    private List<Project> employeeProjects;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Certification> certifications;
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Education> educationList;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Expertise> expertiseList;

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -17,7 +19,7 @@ public class Increment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long incrementId;
-    private Date date;
+    private LocalDate date;
     private float percentage;
 
     @ManyToOne
