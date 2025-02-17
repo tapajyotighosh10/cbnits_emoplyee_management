@@ -5,6 +5,10 @@ import com.cbnits.dto.LoginResponse;
 import com.cbnits.dto.UserRequestDTO;
 import com.cbnits.entity.Users;
 import com.cbnits.service.UsersService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@Tag(name = "Users APIs", description = "REST APIs for CBNITS Users")
 @RestController
 @RequestMapping("/user")
 public class UsersController {
@@ -22,6 +26,43 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
+    @Operation(summary = "User registration REST API", description = "REST API to register users", tags = {"Users APIs"})
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "HTTP Status CREATED"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error"
+            )
+    }
+    )
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@Valid @RequestBody UserRequestDTO userRequestDTO) {
+        // Convert DTO to Entity
+        Users user = new Users();
+        user.setUserName(userRequestDTO.getUserName());
+        user.setPassword(userRequestDTO.getPassword());
+        user.setRole(userRequestDTO.getRole());
+
+        Users registeredUser = usersService.registerUser(user);
+        return ResponseEntity.ok(registeredUser);
+    }
+
+
+    @Operation(summary = "User login REST API", description = "REST API to login for users", tags = {"Users APIs"})
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status SUCCESSFULLY"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error"
+            )
+    }
+    )
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
         boolean isAuthenticated = usersService.authenticate(loginRequest.getUserName(), loginRequest.getPassword());
@@ -34,16 +75,5 @@ public class UsersController {
         }
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@Valid @RequestBody UserRequestDTO userRequestDTO) {
-        // Convert DTO to Entity
-        Users user = new Users();
-        user.setUserName(userRequestDTO.getUserName());
-        user.setPassword(userRequestDTO.getPassword());
-        user.setRole(userRequestDTO.getRole());
-
-        Users registeredUser = usersService.registerUser(user);
-        return ResponseEntity.ok(registeredUser);
-    }
 
 }
