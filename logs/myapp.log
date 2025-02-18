@@ -1,0 +1,25 @@
+18:02:2025 04:12:02: pm [main] INFO  com.cbnits.CbnitsApplication - Starting CbnitsApplication using Java 22.0.2 with PID 12244 (D:\CBNITS_TEST\target\classes started by cbnits in D:\CBNITS_TEST)
+18:02:2025 04:12:02: pm [main] DEBUG com.cbnits.CbnitsApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+18:02:2025 04:12:02: pm [main] INFO  com.cbnits.CbnitsApplication - No active profile set, falling back to 1 default profile: "default"
+18:02:2025 04:12:08: pm [main] INFO  com.cbnits.CbnitsApplication - Started CbnitsApplication in 7.319 seconds (process running for 8.156)
+18:02:2025 04:12:48: pm [http-nio-8080-exec-1] INFO  com.cbnits.service.EmployeeService - Creating a new employee: Tapajyoti Ghosh
+18:02:2025 04:12:48: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping projects for employee: 1
+18:02:2025 04:12:48: pm [http-nio-8080-exec-1] INFO  com.cbnits.service.EmployeeService - Saving employee to database...
+18:02:2025 04:12:48: pm [http-nio-8080-exec-1] INFO  com.cbnits.service.EmployeeService - Employee saved successfully with ID: 10
+18:02:2025 04:28:03: pm [main] INFO  com.cbnits.CbnitsApplication - Starting CbnitsApplication using Java 22.0.2 with PID 16604 (D:\CBNITS_TEST\target\classes started by cbnits in D:\CBNITS_TEST)
+18:02:2025 04:28:03: pm [main] DEBUG com.cbnits.CbnitsApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+18:02:2025 04:28:03: pm [main] INFO  com.cbnits.CbnitsApplication - No active profile set, falling back to 1 default profile: "default"
+18:02:2025 04:28:14: pm [main] INFO  com.cbnits.CbnitsApplication - Started CbnitsApplication in 11.893 seconds (process running for 13.706)
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] INFO  c.c.controller.EmployeeController - Received request to create employee: Tapajyoti Ghosh
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] INFO  com.cbnits.service.EmployeeService - Creating a new employee: Tapajyoti Ghosh
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping projects for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping achievements for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping certifications for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping education for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping expertise for employee: 5
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping increments for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping reviews for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] DEBUG com.cbnits.service.EmployeeService - Mapping resource for employee: 1
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] INFO  com.cbnits.service.EmployeeService - Saving employee to database...
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] INFO  com.cbnits.service.EmployeeService - Employee saved successfully with ID: 11
+18:02:2025 04:28:17: pm [http-nio-8080-exec-1] INFO  c.c.controller.EmployeeController - Employee created successfully with ID: Tapajyoti Ghosh
